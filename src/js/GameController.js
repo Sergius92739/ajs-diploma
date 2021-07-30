@@ -362,9 +362,9 @@ export default class GameController {
    * @returns {Array} Возвращает массив возможных позиций игрока при старте игры
    */
   getUserStartPositions() {
-    const brdSize = this.gamePlay.boardSize;
+    const size = this.gamePlay.boardSize;
     this.userPosition = [];
-    for (let i = 0, j = 1; this.userPosition.length < brdSize * 2; i += brdSize, j += brdSize) {
+    for (let i = 0, j = 1; this.userPosition.length < size * 2; i += size, j += size) {
       this.userPosition.push(i, j);
     }
     return this.userPosition;
@@ -374,9 +374,9 @@ export default class GameController {
    * @returns Возвращает массив возможных позиций бота при старте игры
    */
   getBotStartPositions() {
-    const brdSize = this.gamePlay.boardSize;
+    const size = this.gamePlay.boardSize;
     const botPosition = [];
-    for (let i = 6, j = 7; botPosition.length < brdSize * 2; i += brdSize, j += brdSize) {
+    for (let i = size - 2, j = size - 1; botPosition.length < size * 2; i += size, j += size) {
       botPosition.push(i, j);
     }
     return botPosition;
